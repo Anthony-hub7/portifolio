@@ -1,0 +1,1319 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Joris Anthony ANDRIANANTENAINA - Portfolio</title>
+    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+    <script>tailwind.config={theme:{extend:{colors:{primary:'#8B5CF6',secondary:'#3B82F6'},borderRadius:{'none':'0px','sm':'4px',DEFAULT:'8px','md':'12px','lg':'16px','xl':'20px','2xl':'24px','3xl':'32px','full':'9999px','button':'8px'}}}}</script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@100;300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
+    <style>
+        :where([class^="ri-"])::before { content: "\f3c2"; }
+        
+        body {
+            font-family: 'JetBrains Mono', monospace;
+            background-color: #0A0B0E;
+            color: #F3F4F6;
+            scroll-behavior: smooth;
+        }
+        
+        .glitch {
+            position: relative;
+        }
+        
+        .glitch::before, .glitch::after {
+            content: attr(data-text);
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+        
+        .glitch::before {
+            left: 2px;
+            text-shadow: -1px 0 #FF79C6;
+            clip: rect(44px, 450px, 56px, 0);
+            animation: glitch-anim 5s infinite linear alternate-reverse;
+        }
+        
+        .glitch::after {
+            left: -2px;
+            text-shadow: -1px 0 #3B82F6;
+            clip: rect(44px, 450px, 56px, 0);
+            animation: glitch-anim2 5s infinite linear alternate-reverse;
+        }
+        
+        @keyframes glitch-anim {
+            0% { clip: rect(31px, 9999px, 94px, 0); }
+            5% { clip: rect(70px, 9999px, 71px, 0); }
+            10% { clip: rect(29px, 9999px, 43px, 0); }
+            15% { clip: rect(68px, 9999px, 98px, 0); }
+            20% { clip: rect(57px, 9999px, 78px, 0); }
+            25% { clip: rect(33px, 9999px, 23px, 0); }
+            30% { clip: rect(89px, 9999px, 38px, 0); }
+            35% { clip: rect(20px, 9999px, 93px, 0); }
+            40% { clip: rect(66px, 9999px, 82px, 0); }
+            45% { clip: rect(58px, 9999px, 9px, 0); }
+            50% { clip: rect(31px, 9999px, 35px, 0); }
+            55% { clip: rect(56px, 9999px, 6px, 0); }
+            60% { clip: rect(98px, 9999px, 59px, 0); }
+            65% { clip: rect(42px, 9999px, 51px, 0); }
+            70% { clip: rect(48px, 9999px, 59px, 0); }
+            75% { clip: rect(82px, 9999px, 31px, 0); }
+            80% { clip: rect(63px, 9999px, 91px, 0); }
+            85% { clip: rect(85px, 9999px, 35px, 0); }
+            90% { clip: rect(10px, 9999px, 80px, 0); }
+            95% { clip: rect(99px, 9999px, 23px, 0); }
+            100% { clip: rect(72px, 9999px, 43px, 0); }
+        }
+        
+        @keyframes glitch-anim2 {
+            0% { clip: rect(65px, 9999px, 100px, 0); }
+            5% { clip: rect(52px, 9999px, 74px, 0); }
+            10% { clip: rect(79px, 9999px, 85px, 0); }
+            15% { clip: rect(75px, 9999px, 5px, 0); }
+            20% { clip: rect(67px, 9999px, 61px, 0); }
+            25% { clip: rect(14px, 9999px, 79px, 0); }
+            30% { clip: rect(1px, 9999px, 66px, 0); }
+            35% { clip: rect(86px, 9999px, 30px, 0); }
+            40% { clip: rect(23px, 9999px, 98px, 0); }
+            45% { clip: rect(85px, 9999px, 72px, 0); }
+            50% { clip: rect(71px, 9999px, 75px, 0); }
+            55% { clip: rect(2px, 9999px, 48px, 0); }
+            60% { clip: rect(30px, 9999px, 16px, 0); }
+            65% { clip: rect(59px, 9999px, 50px, 0); }
+            70% { clip: rect(41px, 9999px, 62px, 0); }
+            75% { clip: rect(2px, 9999px, 82px, 0); }
+            80% { clip: rect(47px, 9999px, 73px, 0); }
+            85% { clip: rect(3px, 9999px, 27px, 0); }
+            90% { clip: rect(26px, 9999px, 55px, 0); }
+            95% { clip: rect(42px, 9999px, 97px, 0); }
+            100% { clip: rect(38px, 9999px, 49px, 0); }
+        }
+        
+        .neon-text {
+            text-shadow: 0 0 5px rgba(139, 92, 246, 0.5), 0 0 10px rgba(139, 92, 246, 0.3);
+        }
+        
+        .neon-border {
+            box-shadow: 0 0 5px rgba(139, 92, 246, 0.5), 0 0 10px rgba(139, 92, 246, 0.3);
+        }
+        
+        .progress-bar {
+            height: 6px;
+            background: linear-gradient(90deg, #8B5CF6, #3B82F6);
+            border-radius: 3px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .progress-bar::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 30px;
+            background: rgba(255, 255, 255, 0.3);
+            animation: progress-animation 1.5s infinite;
+        }
+        
+        @keyframes progress-animation {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(400%); }
+        }
+        
+        .hexagon {
+            clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+            transition: all 0.3s ease;
+        }
+        
+        .hexagon:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 0 15px rgba(139, 92, 246, 0.7);
+        }
+        
+        .timeline-dot {
+            width: 16px;
+            height: 16px;
+            background: #8B5CF6;
+            border-radius: 50%;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .timeline-line {
+            position: absolute;
+            top: 8px;
+            left: 8px;
+            width: 2px;
+            height: calc(100% - 8px);
+            background: linear-gradient(to bottom, #8B5CF6, #3B82F6);
+            z-index: 1;
+        }
+        
+        .card-project {
+            transition: all 0.3s ease;
+            background: rgba(20, 20, 30, 0.7);
+            border: 1px solid rgba(139, 92, 246, 0.2);
+        }
+        
+        .card-project:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 0 20px rgba(139, 92, 246, 0.4);
+        }
+        
+        .nav-link {
+            position: relative;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(90deg, #8B5CF6, #3B82F6);
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover::after, .nav-link.active::after {
+            width: 100%;
+        }
+        
+        .typing-text {
+            border-right: 2px solid #8B5CF6;
+            white-space: nowrap;
+            overflow: hidden;
+            animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite;
+        }
+        
+        @keyframes typing {
+            from { width: 0 }
+            to { width: 100% }
+        }
+        
+        @keyframes blink-caret {
+            from, to { border-color: transparent }
+            50% { border-color: #8B5CF6 }
+        }
+        
+        .kanji-bg {
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400' viewBox='0 0 400 400'%3E%3Ctext x='50%25' y='50%25' font-family='Arial' font-size='120' fill='rgba(139, 92, 246, 0.03)' text-anchor='middle' dominant-baseline='middle'%3E技術%3C/text%3E%3C/svg%3E");
+            background-repeat: repeat;
+        }
+        
+        .sakura {
+            position: absolute;
+            width: 15px;
+            height: 15px;
+            background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath fill='rgba(255, 121, 198, 0.2)' d='M50 0 C55 25, 75 45, 100 50 C75 55, 55 75, 50 100 C45 75, 25 55, 0 50 C25 45, 45 25, 50 0'/%3E%3C/svg%3E") no-repeat;
+            pointer-events: none;
+            animation: fall linear infinite;
+        }
+        
+        @keyframes fall {
+            0% { transform: translateY(-100px) rotate(0deg); opacity: 0; }
+            10% { opacity: 1; }
+            100% { transform: translateY(100vh) rotate(360deg); opacity: 0; }
+        }
+        
+        .glassmorphism {
+            background: rgba(20, 20, 30, 0.5);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(139, 92, 246, 0.2);
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+        }
+        
+        input, textarea {
+            background: rgba(30, 30, 40, 0.5);
+            border: 1px solid rgba(139, 92, 246, 0.3);
+            color: #F3F4F6;
+            transition: all 0.3s ease;
+        }
+        
+        input:focus, textarea:focus {
+            border-color: #8B5CF6;
+            box-shadow: 0 0 0 2px rgba(139, 92, 246, 0.2);
+            outline: none;
+        }
+        
+        ::-webkit-scrollbar {
+            width: 6px;
+            height: 6px;
+        }
+        
+        ::-webkit-scrollbar-track {
+            background: #0A0B0E;
+        }
+        
+        ::-webkit-scrollbar-thumb {
+            background: #8B5CF6;
+            border-radius: 3px;
+        }
+        
+        ::-webkit-scrollbar-thumb:hover {
+            background: #3B82F6;
+        }
+        
+        .particles {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            overflow: hidden;
+        }
+        
+        .particle {
+            position: absolute;
+            border-radius: 50%;
+            background: rgba(139, 92, 246, 0.5);
+            animation: float 15s infinite;
+            opacity: 0.3;
+        }
+        
+        @keyframes float {
+            0% { transform: translateY(0) translateX(0); }
+            25% { transform: translateY(-20px) translateX(10px); }
+            50% { transform: translateY(0) translateX(20px); }
+            75% { transform: translateY(20px) translateX(10px); }
+            100% { transform: translateY(0) translateX(0); }
+        }
+    </style>
+</head>
+<body>
+    <nav class="fixed top-0 left-0 w-full z-50 glassmorphism py-4">
+        <div class="container mx-auto px-6 flex justify-between items-center">
+            <a href="#home" class="text-2xl font-bold text-primary font-['Pacifico']">JA</a>
+            
+            <div class="hidden md:flex space-x-8">
+                <a href="#home" class="nav-link active text-white hover:text-primary transition-colors">Accueil</a>
+                <a href="#about" class="nav-link text-white hover:text-primary transition-colors">À propos</a>
+                <a href="#skills" class="nav-link text-white hover:text-primary transition-colors">Compétences</a>
+                <a href="#projects" class="nav-link text-white hover:text-primary transition-colors">Projets</a>
+                <a href="#experience" class="nav-link text-white hover:text-primary transition-colors">Expériences</a>
+                <a href="#contact" class="nav-link text-white hover:text-primary transition-colors">Contact</a>
+            </div>
+            
+            <div class="md:hidden flex items-center">
+                <button id="menu-toggle" class="text-white focus:outline-none">
+                    <div class="w-6 h-0.5 bg-white mb-1.5 transition-all"></div>
+                    <div class="w-6 h-0.5 bg-white mb-1.5 transition-all"></div>
+                    <div class="w-6 h-0.5 bg-white transition-all"></div>
+                </button>
+            </div>
+        </div>
+        
+        <div id="mobile-menu" class="md:hidden hidden glassmorphism absolute w-full">
+            <div class="container mx-auto px-6 py-4 flex flex-col space-y-4">
+                <a href="#home" class="nav-link text-white hover:text-primary transition-colors">Accueil</a>
+                <a href="#about" class="nav-link text-white hover:text-primary transition-colors">À propos</a>
+                <a href="#skills" class="nav-link text-white hover:text-primary transition-colors">Compétences</a>
+                <a href="#projects" class="nav-link text-white hover:text-primary transition-colors">Projets</a>
+                <a href="#experience" class="nav-link text-white hover:text-primary transition-colors">Expériences</a>
+                <a href="#contact" class="nav-link text-white hover:text-primary transition-colors">Contact</a>
+            </div>
+        </div>
+    </nav>
+    
+    <section id="home" class="min-h-screen flex items-center justify-center relative overflow-hidden pt-20">
+        <div class="particles">
+            <div class="particle" style="width: 10px; height: 10px; top: 10%; left: 20%; animation-delay: 0s;"></div>
+            <div class="particle" style="width: 15px; height: 15px; top: 30%; left: 70%; animation-delay: 2s;"></div>
+            <div class="particle" style="width: 8px; height: 8px; top: 60%; left: 30%; animation-delay: 4s;"></div>
+            <div class="particle" style="width: 12px; height: 12px; top: 40%; left: 80%; animation-delay: 6s;"></div>
+            <div class="particle" style="width: 7px; height: 7px; top: 80%; left: 10%; animation-delay: 8s;"></div>
+            <div class="particle" style="width: 14px; height: 14px; top: 20%; left: 50%; animation-delay: 10s;"></div>
+            <div class="particle" style="width: 9px; height: 9px; top: 70%; left: 60%; animation-delay: 12s;"></div>
+        </div>
+        
+        <div class="container mx-auto px-6 flex flex-col lg:flex-row items-center justify-between">
+            <div class="lg:w-1/2 text-center lg:text-left mb-12 lg:mb-0">
+                <h1 class="text-4xl md:text-6xl font-bold mb-4 glitch" data-text="Joris Anthony">
+                    Joris Anthony
+                </h1>
+                <h2 class="text-2xl md:text-3xl font-bold mb-6 text-primary">ANDRIANANTENAINA</h2>
+                
+                <div class="h-12 overflow-hidden mb-8">
+                    <div id="typing-text" class="typing-text text-lg md:text-xl">
+                        Développeur Web & Technicien Réseau
+                    </div>
+                </div>
+                
+                <p class="text-gray-300 mb-8 max-w-lg mx-auto lg:mx-0">
+                    Passionné, Créatif, Toujours Curieux
+                </p>
+                
+                <div class="flex flex-wrap justify-center lg:justify-start gap-4">
+                    <a href="#" class="px-6 py-3 bg-primary text-white font-medium !rounded-button hover:bg-opacity-80 transition-all flex items-center whitespace-nowrap">
+                        <span class="w-5 h-5 flex items-center justify-center mr-2">
+                            <i class="ri-download-line"></i>
+                        </span>
+                        Télécharger CV
+                    </a>
+                    <a href="https://github.com/Anthony-hub7" target="_blank" class="px-6 py-3 bg-secondary text-white font-medium !rounded-button hover:bg-opacity-80 transition-all flex items-center whitespace-nowrap">
+                        <span class="w-5 h-5 flex items-center justify-center mr-2">
+                            <i class="ri-github-fill"></i>
+                        </span>
+                        GitHub
+                    </a>
+                    <a href="mailto:j.anthonyandr@gmail.com" class="px-6 py-3 bg-pink-500 text-white font-medium !rounded-button hover:bg-opacity-80 transition-all flex items-center whitespace-nowrap">
+                        <span class="w-5 h-5 flex items-center justify-center mr-2">
+                            <i class="ri-mail-line"></i>
+                        </span>
+                        Email
+                    </a>
+                </div>
+            </div>
+            
+            <div class="lg:w-1/2 flex justify-center">
+                <div class="relative w-64 h-64 md:w-80 md:h-80">
+                    <div class="absolute inset-0 bg-gradient-to-r from-primary to-secondary rounded-full opacity-20 animate-pulse"></div>
+                    <img src="./WhatsApp Image 2025-06-12 at 14.14.48.jpeg" alt="Joris Anthony" class="rounded-full w-full h-full object-cover z-10 relative p-2">
+                    <div class="absolute -inset-0.5 bg-gradient-to-r from-primary to-secondary rounded-full opacity-50 blur-sm z-0"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section id="about" class="py-20 relative kanji-bg">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-16 neon-text">À propos de moi</h2>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <div class="glassmorphism rounded-lg p-8">
+                    <div class="flex items-start mb-6">
+                        <div class="w-12 h-12 flex items-center justify-center bg-primary bg-opacity-20 rounded-lg mr-4">
+                            <i class="ri-user-line text-primary text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-semibold mb-2">Qui suis-je</h3>
+                            <p class="text-gray-300">
+                                Jeune développeur web et technicien réseau de 20 ans basé à Antananarivo, Madagascar. 
+                                Je combine ma passion pour le code avec une solide expertise technique pour créer des 
+                                solutions web performantes et sécurisées.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-start mb-6">
+                        <div class="w-12 h-12 flex items-center justify-center bg-primary bg-opacity-20 rounded-lg mr-4">
+                            <i class="ri-heart-line text-primary text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-semibold mb-2">Passions</h3>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-3 py-1 bg-primary bg-opacity-20 text-primary rounded-full text-sm">Développement web</span>
+                                <span class="px-3 py-1 bg-secondary bg-opacity-20 text-secondary rounded-full text-sm">Réseaux</span>
+                                <span class="px-3 py-1 bg-pink-500 bg-opacity-20 text-pink-500 rounded-full text-sm">Linux</span>
+                                <span class="px-3 py-1 bg-purple-400 bg-opacity-20 text-purple-400 rounded-full text-sm">Manga/Anime</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-start">
+                        <div class="w-12 h-12 flex items-center justify-center bg-primary bg-opacity-20 rounded-lg mr-4">
+                            <i class="ri-award-line text-primary text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-semibold mb-2">Soft Skills</h3>
+                            <ul class="list-disc list-inside text-gray-300 space-y-1">
+                                <li>Travail en équipe</li>
+                                <li>Persévérance</li>
+                                <li>Créativité</li>
+                                <li>Gestion de projet</li>
+                                <li>Résolution de problèmes</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="glassmorphism rounded-lg p-8 flex flex-col justify-between">
+                    <div class="mb-8">
+                        <h3 class="text-xl font-semibold mb-4 flex items-center">
+                            <span class="w-8 h-8 flex items-center justify-center bg-primary bg-opacity-20 rounded-lg mr-2">
+                                <i class="ri-map-pin-line text-primary"></i>
+                            </span>
+                            Localisation
+                        </h3>
+                        <p class="text-gray-300 flex items-center">
+                            <span class="w-6 h-6 flex items-center justify-center mr-2">
+                                <i class="ri-map-pin-fill text-pink-500"></i>
+                            </span>
+                            Antananarivo, Madagascar
+                        </p>
+                    </div>
+                    
+                    <div class="mb-8">
+                        <h3 class="text-xl font-semibold mb-4 flex items-center">
+                            <span class="w-8 h-8 flex items-center justify-center bg-primary bg-opacity-20 rounded-lg mr-2">
+                                <i class="ri-translate-2-line text-primary"></i>
+                            </span>
+                            Langues
+                        </h3>
+                        <div class="space-y-4">
+                            <div>
+                                <div class="flex justify-between mb-1">
+                                    <span>Français</span>
+                                    <span>Courant</span>
+                                </div>
+                                <div class="progress-bar">
+                                    <div class="h-full bg-gradient-to-r from-primary to-secondary" style="width: 95%"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between mb-1">
+                                    <span>Anglais</span>
+                                    <span>Intermédiaire</span>
+                                </div>
+                                <div class="progress-bar">
+                                    <div class="h-full bg-gradient-to-r from-primary to-secondary" style="width: 70%"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between mb-1">
+                                    <span>Malagasy</span>
+                                    <span>Langue maternelle</span>
+                                </div>
+                                <div class="progress-bar">
+                                    <div class="h-full bg-gradient-to-r from-primary to-secondary" style="width: 100%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <h3 class="text-xl font-semibold mb-4 flex items-center">
+                            <span class="w-8 h-8 flex items-center justify-center bg-primary bg-opacity-20 rounded-lg mr-2">
+                                <i class="ri-calendar-line text-primary"></i>
+                            </span>
+                            Disponibilité
+                        </h3>
+                        <p class="text-gray-300">
+                            Disponible pour des projets freelance et des opportunités d'emploi à temps plein.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section id="skills" class="py-20 relative">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-16 neon-text">Mes compétences</h2>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <div class="glassmorphism rounded-lg p-8">
+                    <h3 class="text-xl font-semibold mb-6 flex items-center">
+                        <span class="w-8 h-8 flex items-center justify-center bg-primary bg-opacity-20 rounded-lg mr-2">
+                            <i class="ri-code-s-slash-line text-primary"></i>
+                        </span>
+                        Langages & Frameworks
+                    </h3>
+                    
+                    <div class="grid grid-cols-2 sm:grid-cols-3 gap-4">
+                        <div class="hexagon bg-primary bg-opacity-20 p-4 flex flex-col items-center justify-center">
+                            <span class="w-10 h-10 flex items-center justify-center mb-2">
+                                <i class="ri-html5-fill text-2xl text-orange-500"></i>
+                            </span>
+                            <span>HTML</span>
+                        </div>
+                        <div class="hexagon bg-primary bg-opacity-20 p-4 flex flex-col items-center justify-center">
+                            <span class="w-10 h-10 flex items-center justify-center mb-2">
+                                <i class="ri-css3-fill text-2xl text-blue-500"></i>
+                            </span>
+                            <span>CSS</span>
+                        </div>
+                        <div class="hexagon bg-primary bg-opacity-20 p-4 flex flex-col items-center justify-center">
+                            <span class="w-10 h-10 flex items-center justify-center mb-2">
+                                <i class="ri-javascript-fill text-2xl text-yellow-400"></i>
+                            </span>
+                            <span>JavaScript</span>
+                        </div>
+                        <div class="hexagon bg-primary bg-opacity-20 p-4 flex flex-col items-center justify-center">
+                            <span class="w-10 h-10 flex items-center justify-center mb-2">
+                                <i class="ri-vuejs-fill text-2xl text-green-500"></i>
+                            </span>
+                            <span>Vue.js</span>
+                        </div>
+                        <div class="hexagon bg-primary bg-opacity-20 p-4 flex flex-col items-center justify-center">
+                            <span class="w-10 h-10 flex items-center justify-center mb-2">
+                                <i class="ri-reactjs-fill text-2xl text-blue-400"></i>
+                            </span>
+                            <span>React</span>
+                        </div>
+                        <div class="hexagon bg-primary bg-opacity-20 p-4 flex flex-col items-center justify-center">
+                            <span class="w-10 h-10 flex items-center justify-center mb-2">
+                                <i class="ri-nodejs-fill text-2xl text-green-600"></i>
+                            </span>
+                            <span>Node.js</span>
+                        </div>
+                        <div class="hexagon bg-primary bg-opacity-20 p-4 flex flex-col items-center justify-center">
+                            <span class="w-10 h-10 flex items-center justify-center mb-2">
+                                <i class="ri-php-fill text-2xl text-purple-600"></i>
+                            </span>
+                            <span>PHP</span>
+                        </div>
+                        <div class="hexagon bg-primary bg-opacity-20 p-4 flex flex-col items-center justify-center">
+                            <span class="w-10 h-10 flex items-center justify-center mb-2">
+                                <i class="ri-database-2-fill text-2xl text-blue-600"></i>
+                            </span>
+                            <span>SQL</span>
+                        </div>
+                        <div class="hexagon bg-primary bg-opacity-20 p-4 flex flex-col items-center justify-center">
+                            <span class="w-10 h-10 flex items-center justify-center mb-2">
+                                <i class="ri-python-fill text-2xl text-yellow-600"></i>
+                            </span>
+                            <span>Python</span>
+                        </div>
+                    </div>
+                    
+                    <h4 class="text-lg font-medium mt-8 mb-4">Frameworks PHP</h4>
+                    <div class="grid grid-cols-3 gap-4 mb-8">
+                        <div class="hexagon bg-primary bg-opacity-20 p-4 flex flex-col items-center justify-center">
+                            <img src="https://cdn.worldvectorlogo.com/logos/laravel-2.svg" alt="Laravel" class="w-12 h-12 mb-2">
+                            <span>Laravel</span>
+                        </div>
+                        <div class="hexagon bg-primary bg-opacity-20 p-4 flex flex-col items-center justify-center">
+                            <img src="https://symfony.com/logos/symfony_white_03.svg" alt="Symfony" class="w-12 h-12 mb-2">
+                            <span>Symfony</span>
+                        </div>
+                        <div class="hexagon bg-primary bg-opacity-20 p-4 flex flex-col items-center justify-center">
+                            <img src="https://cdn.worldvectorlogo.com/logos/codeigniter.svg" alt="CodeIgniter" class="w-12 h-12 mb-2">
+                            <span>CodeIgniter</span>
+                        </div>
+                    </div>
+                    
+                    <h4 class="text-lg font-medium mt-8 mb-4">Frameworks Python</h4>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="hexagon bg-primary bg-opacity-20 p-4 flex flex-col items-center justify-center">
+                            <img src="https://cdn.worldvectorlogo.com/logos/flask.svg" alt="Flask" class="w-12 h-12 mb-2">
+                            <span>Flask</span>
+                        </div>
+                        <div class="hexagon bg-primary bg-opacity-20 p-4 flex flex-col items-center justify-center">
+                            <img src="https://bottlepy.org/docs/dev/_static/logo_nav.png" alt="Bottle" class="w-12 h-12 mb-2">
+                            <span>Bottle</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="glassmorphism rounded-lg p-8">
+                    <h3 class="text-xl font-semibold mb-6 flex items-center">
+                        <span class="w-8 h-8 flex items-center justify-center bg-primary bg-opacity-20 rounded-lg mr-2">
+                            <i class="ri-terminal-box-line text-primary"></i>
+                        </span>
+                        Systèmes & Outils
+                    </h3>
+                    
+                    <div class="grid grid-cols-2 sm:grid-cols-3 gap-4 mb-8">
+                        <div class="hexagon bg-primary bg-opacity-20 p-4 flex flex-col items-center justify-center">
+                            <span class="w-10 h-10 flex items-center justify-center mb-2">
+                                <i class="ri-ubuntu-fill text-2xl text-orange-500"></i>
+                            </span>
+                            <span>Linux</span>
+                        </div>
+                        <div class="hexagon bg-primary bg-opacity-20 p-4 flex flex-col items-center justify-center">
+                            <span class="w-10 h-10 flex items-center justify-center mb-2">
+                                <i class="ri-windows-fill text-2xl text-blue-500"></i>
+                            </span>
+                            <span>Windows</span>
+                        </div>
+                        <div class="hexagon bg-primary bg-opacity-20 p-4 flex flex-col items-center justify-center">
+                            <span class="w-10 h-10 flex items-center justify-center mb-2">
+                                <i class="ri-router-fill text-2xl text-green-500"></i>
+                            </span>
+                            <span>Réseaux</span>
+                        </div>
+                        <div class="hexagon bg-primary bg-opacity-20 p-4 flex flex-col items-center justify-center">
+                            <span class="w-10 h-10 flex items-center justify-center mb-2">
+                                <i class="ri-git-branch-line text-2xl text-orange-600"></i>
+                            </span>
+                            <span>Git</span>
+                        </div>
+                        <div class="hexagon bg-primary bg-opacity-20 p-4 flex flex-col items-center justify-center">
+                            <span class="w-10 h-10 flex items-center justify-center mb-2">
+                                <i class="ri-server-fill text-2xl text-gray-400"></i>
+                            </span>
+                            <span>Docker</span>
+                        </div>
+                        <div class="hexagon bg-primary bg-opacity-20 p-4 flex flex-col items-center justify-center">
+                            <span class="w-10 h-10 flex items-center justify-center mb-2">
+                                <i class="ri-database-2-line text-2xl text-blue-400"></i>
+                            </span>
+                            <span>MySQL</span>
+                        </div>
+                    </div>
+                    
+                    <h4 class="text-lg font-medium mb-4">Réseaux & Systèmes</h4>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="hexagon bg-primary bg-opacity-20 p-4 flex flex-col items-center justify-center">
+                            <span class="w-10 h-10 flex items-center justify-center mb-2">
+                                <i class="ri-router-line text-2xl text-primary"></i>
+                            </span>
+                            <span>Configuration réseau</span>
+                        </div>
+                        <div class="hexagon bg-primary bg-opacity-20 p-4 flex flex-col items-center justify-center">
+                            <span class="w-10 h-10 flex items-center justify-center mb-2">
+                                <i class="ri-shield-keyhole-line text-2xl text-secondary"></i>
+                            </span>
+                            <span>Sécurité réseau</span>
+                        </div>
+                        <div class="hexagon bg-primary bg-opacity-20 p-4 flex flex-col items-center justify-center">
+                            <span class="w-10 h-10 flex items-center justify-center mb-2">
+                                <i class="ri-terminal-box-line text-2xl text-pink-500"></i>
+                            </span>
+                            <span>Administration Linux</span>
+                        </div>
+                        <div class="hexagon bg-primary bg-opacity-20 p-4 flex flex-col items-center justify-center ml-4">
+    <span class="w-10 h-10 flex items-center justify-center mb-2">
+        <i class="ri-computer-line text-2xl text-purple-400"></i>
+    </span>
+    <span class="flex items-center text-center">Maintenance informatique</span>
+</div>
+                    </div>
+                    
+                    <h4 class="text-lg font-medium mt-8 mb-4">Outils de développement</h4>
+                    <div class="grid grid-cols-3 gap-4">
+                        <div class="hexagon bg-primary bg-opacity-20 p-4 flex flex-col items-center justify-center">
+                            <span class="w-10 h-10 flex items-center justify-center mb-2">
+                                <i class="ri-git-branch-line text-2xl text-orange-500"></i>
+                            </span>
+                            <span>Git/GitHub</span>
+                        </div>
+                        <div class="hexagon bg-primary bg-opacity-20 p-4 flex flex-col items-center justify-center">
+                            <span class="w-10 h-10 flex items-center justify-center mb-2">
+                                <i class="ri-send-plane-line text-2xl text-blue-400"></i>
+                            </span>
+                            <span>Postman</span>
+                        </div>
+                        <div class="hexagon bg-primary bg-opacity-20 p-4 flex flex-col items-center justify-center">
+                            <span class="w-10 h-10 flex items-center justify-center mb-2">
+                                <i class="ri-code-box-line text-2xl text-blue-500"></i>
+                            </span>
+                            <span>VS Code</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section id="projects" class="py-20 relative kanji-bg">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-16 neon-text">Mes projets</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="card-project rounded-lg overflow-hidden">
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="https://readdy.ai/api/search-image?query=modern%20e-commerce%20website%20for%20video%20games%2C%20minimalist%20design%2C%20dark%20theme%20with%20purple%20and%20blue%20accents%2C%20professional%20UI%2FUX%2C%20high%20quality%2C%20digital%20storefront&width=600&height=400&seq=2&orientation=landscape" alt="Planet Game Madagascar" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-70"></div>
+                        <div class="absolute bottom-4 left-4">
+                            <h3 class="text-xl font-bold text-white">Planet Game Madagascar</h3>
+                            <p class="text-gray-300 text-sm">E-commerce & Application</p>
+                        </div>
+                    </div>
+                    
+                    <div class="p-6">
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-2 py-1 bg-primary bg-opacity-20 text-primary rounded-full text-xs">PHP</span>
+                            <span class="px-2 py-1 bg-secondary bg-opacity-20 text-secondary rounded-full text-xs">Laravel</span>
+                            <span class="px-2 py-1 bg-pink-500 bg-opacity-20 text-pink-500 rounded-full text-xs">Vue.js</span>
+                            <span class="px-2 py-1 bg-purple-400 bg-opacity-20 text-purple-400 rounded-full text-xs">MySQL</span>
+                        </div>
+                        
+                        <p class="text-gray-300 text-sm mb-4">
+                            Site e-commerce et application mobile pour une boutique de jeux vidéo à Madagascar. 
+                            Système complet avec gestion des stocks, paiements en ligne et suivi des commandes.
+                        </p>
+                        
+                        <div class="flex justify-between">
+                            <a href="https://planetgamemg.com" target="_blank" class="text-primary hover:text-secondary transition-colors flex items-center">
+                                <span class="w-5 h-5 flex items-center justify-center mr-1">
+                                    <i class="ri-external-link-line"></i>
+                                </span>
+                                Voir le site
+                            </a>
+                            <a href="#" class="text-primary hover:text-secondary transition-colors flex items-center">
+                                <span class="w-5 h-5 flex items-center justify-center mr-1">
+                                    <i class="ri-github-fill"></i>
+                                </span>
+                                Code
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card-project rounded-lg overflow-hidden">
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="https://readdy.ai/api/search-image?query=network%20monitoring%20dashboard%2C%20dark%20theme%20with%20blue%20and%20purple%20data%20visualization%2C%20server%20status%20interface%2C%20professional%20IT%20management%20system%2C%20high%20quality&width=600&height=400&seq=3&orientation=landscape" alt="Système de monitoring réseau" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-70"></div>
+                        <div class="absolute bottom-4 left-4">
+                            <h3 class="text-xl font-bold text-white">NetMonitor</h3>
+                            <p class="text-gray-300 text-sm">Système de monitoring réseau</p>
+                        </div>
+                    </div>
+                    
+                    <div class="p-6">
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-2 py-1 bg-primary bg-opacity-20 text-primary rounded-full text-xs">Python</span>
+                            <span class="px-2 py-1 bg-secondary bg-opacity-20 text-secondary rounded-full text-xs">Flask</span>
+                            <span class="px-2 py-1 bg-pink-500 bg-opacity-20 text-pink-500 rounded-full text-xs">JavaScript</span>
+                            <span class="px-2 py-1 bg-purple-400 bg-opacity-20 text-purple-400 rounded-full text-xs">SNMP</span>
+                        </div>
+                        
+                        <p class="text-gray-300 text-sm mb-4">
+                            Application de surveillance réseau développée pendant mon stage au Ministère. 
+                            Monitoring en temps réel, alertes et rapports de performance.
+                        </p>
+                        
+                        <div class="flex justify-between">
+                            <a href="#" class="text-primary hover:text-secondary transition-colors flex items-center">
+                                <span class="w-5 h-5 flex items-center justify-center mr-1">
+                                    <i class="ri-external-link-line"></i>
+                                </span>
+                                Démo
+                            </a>
+                            <a href="#" class="text-primary hover:text-secondary transition-colors flex items-center">
+                                <span class="w-5 h-5 flex items-center justify-center mr-1">
+                                    <i class="ri-github-fill"></i>
+                                </span>
+                                Code
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card-project rounded-lg overflow-hidden">
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="https://readdy.ai/api/search-image?query=anime%20and%20manga%20collection%20app%2C%20dark%20UI%20with%20purple%20accents%2C%20mobile%20interface%20design%2C%20user%20library%20view%20with%20manga%20covers%2C%20professional%20app%20design&width=600&height=400&seq=4&orientation=landscape" alt="MangaTracker" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-70"></div>
+                        <div class="absolute bottom-4 left-4">
+                            <h3 class="text-xl font-bold text-white">MangaTracker</h3>
+                            <p class="text-gray-300 text-sm">Application de suivi d'anime/manga</p>
+                        </div>
+                    </div>
+                    
+                    <div class="p-6">
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-2 py-1 bg-primary bg-opacity-20 text-primary rounded-full text-xs">Vue.js</span>
+                            <span class="px-2 py-1 bg-secondary bg-opacity-20 text-secondary rounded-full text-xs">Node.js</span>
+                            <span class="px-2 py-1 bg-pink-500 bg-opacity-20 text-pink-500 rounded-full text-xs">MongoDB</span>
+                            <span class="px-2 py-1 bg-purple-400 bg-opacity-20 text-purple-400 rounded-full text-xs">API</span>
+                        </div>
+                        
+                        <p class="text-gray-300 text-sm mb-4">
+                            Projet personnel pour suivre ma collection de manga et les animes que je regarde.
+                            Intégration avec des API externes pour les informations et les mises à jour.
+                        </p>
+                        
+                        <div class="flex justify-between">
+                            <a href="#" class="text-primary hover:text-secondary transition-colors flex items-center">
+                                <span class="w-5 h-5 flex items-center justify-center mr-1">
+                                    <i class="ri-external-link-line"></i>
+                                </span>
+                                Démo
+                            </a>
+                            <a href="#" class="text-primary hover:text-secondary transition-colors flex items-center">
+                                <span class="w-5 h-5 flex items-center justify-center mr-1">
+                                    <i class="ri-github-fill"></i>
+                                </span>
+                                Code
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+                <a href="https://github.com/Anthony-hub7" target="_blank" class="px-6 py-3 bg-primary text-white font-medium !rounded-button hover:bg-opacity-80 transition-all inline-flex items-center whitespace-nowrap">
+                    <span class="w-5 h-5 flex items-center justify-center mr-2">
+                        <i class="ri-github-fill"></i>
+                    </span>
+                    Voir plus de projets sur GitHub
+                </a>
+            </div>
+        </div>
+    </section>
+    
+    <section id="experience" class="py-20 relative">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-16 neon-text">Expériences & Formation</h2>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <div class="glassmorphism rounded-lg p-8">
+                    <h3 class="text-xl font-semibold mb-6 flex items-center">
+                        <span class="w-8 h-8 flex items-center justify-center bg-primary bg-opacity-20 rounded-lg mr-2">
+                            <i class="ri-briefcase-line text-primary"></i>
+                        </span>
+                        Expériences professionnelles
+                    </h3>
+                    
+                    <div class="space-y-8 relative">
+                        <div class="absolute top-0 bottom-0 left-3 w-0.5 bg-gradient-to-b from-primary via-secondary to-pink-500"></div>
+                        
+                        <div class="relative pl-10">
+                            <div class="absolute left-0 top-1 timeline-dot"></div>
+                            <div class="glassmorphism rounded-lg p-4">
+                                <div class="flex justify-between items-center mb-2">
+                                    <h4 class="font-semibold">Développeur Web Freelance</h4>
+                                    <span class="text-xs bg-primary bg-opacity-20 text-primary px-2 py-1 rounded-full">Juin 2024 - Présent</span>
+                                </div>
+                                <h5 class="text-primary mb-2">Planet Game Madagascar</h5>
+                                <p class="text-gray-300 text-sm">
+                                    Développement et maintenance du site e-commerce et de l'application mobile.
+                                    Mise en place d'un système de gestion des stocks et de paiement en ligne.
+                                    Optimisation des performances et de la sécurité.
+                                </p>
+                            </div>
+                        </div>
+                        
+                        <div class="relative pl-10">
+                            <div class="absolute left-0 top-1 timeline-dot"></div>
+                            <div class="glassmorphism rounded-lg p-4">
+                                <div class="flex justify-between items-center mb-2">
+                                    <h4 class="font-semibold">Stagiaire Réseau</h4>
+                                    <span class="text-xs bg-secondary bg-opacity-20 text-secondary px-2 py-1 rounded-full">Mars - Mai 2024</span>
+                                </div>
+                                <h5 class="text-primary mb-2">Ministère de la Jeunesse et des Sports</h5>
+                                <p class="text-gray-300 text-sm">
+                                    Configuration et maintenance du réseau local.
+                                    Développement d'un outil de monitoring réseau.
+                                    Assistance technique et formation des utilisateurs.
+                                    Mise en place de mesures de sécurité réseau.
+                                </p>
+                            </div>
+                        </div>
+                        
+                        <div class="relative pl-10">
+                            <div class="absolute left-0 top-1 timeline-dot"></div>
+                            <div class="glassmorphism rounded-lg p-4">
+                                <div class="flex justify-between items-center mb-2">
+                                    <h4 class="font-semibold">Projet étudiant</h4>
+                                    <span class="text-xs bg-pink-500 bg-opacity-20 text-pink-500 px-2 py-1 rounded-full">Janvier - Février 2024</span>
+                                </div>
+                                <h5 class="text-primary mb-2">ESMIA</h5>
+                                <p class="text-gray-300 text-sm">
+                                    Développement d'une application de gestion de bibliothèque pour l'université.
+                                    Travail en équipe avec 3 autres étudiants.
+                                    Technologies utilisées: PHP, Laravel, MySQL, Bootstrap.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="glassmorphism rounded-lg p-8">
+                    <h3 class="text-xl font-semibold mb-6 flex items-center">
+                        <span class="w-8 h-8 flex items-center justify-center bg-primary bg-opacity-20 rounded-lg mr-2">
+                            <i class="ri-graduation-cap-line text-primary"></i>
+                        </span>
+                        Formation
+                    </h3>
+                    
+                    <div class="space-y-8 relative">
+                        <div class="absolute top-0 bottom-0 left-3 w-0.5 bg-gradient-to-b from-primary via-secondary to-pink-500"></div>
+                        
+                        <div class="relative pl-10">
+                            <div class="absolute left-0 top-1 timeline-dot"></div>
+                            <div class="glassmorphism rounded-lg p-4">
+                                <div class="flex justify-between items-center mb-2">
+                                    <h4 class="font-semibold">Licence en Informatique</h4>
+                                    <span class="text-xs bg-primary bg-opacity-20 text-primary px-2 py-1 rounded-full">2021 - 2024</span>
+                                </div>
+                                <h5 class="text-primary mb-2">ESMIA - École Supérieure de Management et d'Informatique Appliquée</h5>
+                                <p class="text-gray-300 text-sm">
+                                    Spécialisation en développement web et réseaux.
+                                    Projet de fin d'études: Système de gestion pour boutique de jeux vidéo.
+                                    Mention Bien.
+                                </p>
+                            </div>
+                        </div>
+                        
+                        <div class="relative pl-10">
+                            <div class="absolute left-0 top-1 timeline-dot"></div>
+                            <div class="glassmorphism rounded-lg p-4">
+                                <div class="flex justify-between items-center mb-2">
+                                    <h4 class="font-semibold">Formation Développement Web & Réseau</h4>
+                                    <span class="text-xs bg-secondary bg-opacity-20 text-secondary px-2 py-1 rounded-full">2022 - 2023</span>
+                                </div>
+                                <h5 class="text-primary mb-2">CF Aterro Formation</h5>
+                                <p class="text-gray-300 text-sm">
+                                    Formation complémentaire en parallèle de mes études.
+                                    Approfondissement des connaissances en développement web et réseaux.
+                                    Certification en administration système Linux.
+                                </p>
+                            </div>
+                        </div>
+                        
+                        <div class="relative pl-10">
+                            <div class="absolute left-0 top-1 timeline-dot"></div>
+                            <div class="glassmorphism rounded-lg p-4">
+                                <div class="flex justify-between items-center mb-2">
+                                    <h4 class="font-semibold">Baccalauréat Scientifique</h4>
+                                    <span class="text-xs bg-pink-500 bg-opacity-20 text-pink-500 px-2 py-1 rounded-full">2021</span>
+                                </div>
+                                <h5 class="text-primary mb-2">Lycée Moderne Ampefiloha</h5>
+                                <p class="text-gray-300 text-sm">
+                                    Spécialité Mathématiques et Sciences Physiques.
+                                    Mention Assez Bien.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <h3 class="text-xl font-semibold my-6 flex items-center">
+                        <span class="w-8 h-8 flex items-center justify-center bg-primary bg-opacity-20 rounded-lg mr-2">
+                            <i class="ri-award-line text-primary"></i>
+                        </span>
+                        Certifications
+                    </h3>
+                    
+                    <div class="space-y-4">
+                        <div class="glassmorphism rounded-lg p-4 flex items-center">
+                            <span class="w-10 h-10 flex items-center justify-center bg-primary bg-opacity-20 rounded-lg mr-4">
+                                <i class="ri-code-box-line text-primary text-xl"></i>
+                            </span>
+                            <div>
+                                <h4 class="font-medium">Administration Linux</h4>
+                                <p class="text-gray-300 text-sm">CF Aterro Formation - 2023</p>
+                            </div>
+                        </div>
+                        
+                        <div class="glassmorphism rounded-lg p-4 flex items-center">
+                            <span class="w-10 h-10 flex items-center justify-center bg-secondary bg-opacity-20 rounded-lg mr-4">
+                                <i class="ri-router-line text-secondary text-xl"></i>
+                            </span>
+                            <div>
+                                <h4 class="font-medium">Réseaux et Sécurité</h4>
+                                <p class="text-gray-300 text-sm">CF Aterro Formation - 2023</p>
+                            </div>
+                        </div>
+                        
+                        <div class="glassmorphism rounded-lg p-4 flex items-center">
+                            <span class="w-10 h-10 flex items-center justify-center bg-pink-500 bg-opacity-20 rounded-lg mr-4">
+                                <i class="ri-html5-line text-pink-500 text-xl"></i>
+                            </span>
+                            <div>
+                                <h4 class="font-medium">Développement Web Avancé</h4>
+                                <p class="text-gray-300 text-sm">ESMIA - 2022</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section id="contact" class="py-20 relative kanji-bg">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-16 neon-text">Me contacter</h2>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <div class="glassmorphism rounded-lg p-8">
+                    <h3 class="text-xl font-semibold mb-6">Envoyez-moi un message</h3>
+                    
+                    <form id="contact-form" class="space-y-6">
+                        <div>
+                            <label for="name" class="block mb-2 text-sm font-medium">Nom</label>
+                            <input type="text" id="name" class="w-full px-4 py-3 rounded border-none focus:ring-2 focus:ring-primary" placeholder="Votre nom" required>
+                        </div>
+                        
+                        <div>
+                            <label for="email" class="block mb-2 text-sm font-medium">Email</label>
+                            <input type="email" id="email" class="w-full px-4 py-3 rounded border-none focus:ring-2 focus:ring-primary" placeholder="votre@email.com" required>
+                        </div>
+                        
+                        <div>
+                            <label for="subject" class="block mb-2 text-sm font-medium">Sujet</label>
+                            <input type="text" id="subject" class="w-full px-4 py-3 rounded border-none focus:ring-2 focus:ring-primary" placeholder="Sujet de votre message" required>
+                        </div>
+                        
+                        <div>
+                            <label for="message" class="block mb-2 text-sm font-medium">Message</label>
+                            <textarea id="message" rows="5" class="w-full px-4 py-3 rounded border-none focus:ring-2 focus:ring-primary" placeholder="Votre message" required></textarea>
+                        </div>
+                        
+                        <button type="submit" class="w-full px-6 py-3 bg-primary text-white font-medium !rounded-button hover:bg-opacity-80 transition-all flex items-center justify-center whitespace-nowrap">
+                            <span class="w-5 h-5 flex items-center justify-center mr-2">
+                                <i class="ri-send-plane-fill"></i>
+                            </span>
+                            Envoyer le message
+                        </button>
+                    </form>
+                </div>
+                
+                <div class="glassmorphism rounded-lg p-8 flex flex-col justify-between">
+                    <div>
+                        <h3 class="text-xl font-semibold mb-6">Informations de contact</h3>
+                        
+                        <div class="space-y-6">
+                            <div class="flex items-start">
+                                <div class="w-12 h-12 flex items-center justify-center bg-primary bg-opacity-20 rounded-lg mr-4 mt-1">
+                                    <i class="ri-mail-line text-primary text-xl"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-medium mb-1">Email</h4>
+                                    <a href="mailto:j.anthonyandr@gmail.com" class="text-gray-300 hover:text-primary transition-colors">j.anthonyandr@gmail.com</a>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="w-12 h-12 flex items-center justify-center bg-primary bg-opacity-20 rounded-lg mr-4 mt-1">
+                                    <i class="ri-phone-line text-primary text-xl"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-medium mb-1">Téléphone</h4>
+                                    <a href="tel:+261342149288" class="text-gray-300 hover:text-primary transition-colors">+261 34 21 492 88</a>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="w-12 h-12 flex items-center justify-center bg-primary bg-opacity-20 rounded-lg mr-4 mt-1">
+                                    <i class="ri-map-pin-line text-primary text-xl"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-medium mb-1">Localisation</h4>
+                                    <p class="text-gray-300">Antananarivo, Madagascar</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <h3 class="text-xl font-semibold mb-6 mt-8">Réseaux sociaux</h3>
+                        
+                        <div class="flex space-x-4">
+                            <a href="https://github.com/Anthony-hub7" target="_blank" class="w-12 h-12 flex items-center justify-center bg-gray-800 hover:bg-gray-700 rounded-lg transition-colors">
+                                <i class="ri-github-fill text-xl"></i>
+                            </a>
+                            <a href="#" class="w-12 h-12 flex items-center justify-center bg-blue-600 hover:bg-blue-500 rounded-lg transition-colors">
+                                <i class="ri-linkedin-fill text-xl"></i>
+                            </a>
+                            <a href="#" class="w-12 h-12 flex items-center justify-center bg-pink-600 hover:bg-pink-500 rounded-lg transition-colors">
+                                <i class="ri-instagram-fill text-xl"></i>
+                            </a>
+                            <a href="#" class="w-12 h-12 flex items-center justify-center bg-blue-400 hover:bg-blue-300 rounded-lg transition-colors">
+                                <i class="ri-twitter-fill text-xl"></i>
+                            </a>
+                        </div>
+                        
+                        <div class="mt-8 p-4 bg-primary bg-opacity-10 rounded-lg border border-primary border-opacity-20">
+                            <p class="text-sm text-center">
+                                Disponible pour des projets freelance et des opportunités d'emploi à temps plein.
+                                N'hésitez pas à me contacter !
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <footer class="py-8 relative">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-4 md:mb-0">
+                    <a href="#home" class="text-2xl font-bold text-primary font-['Pacifico']">JA</a>
+                </div>
+                
+                <div class="flex flex-wrap justify-center gap-6 mb-4 md:mb-0">
+                    <a href="#home" class="text-gray-300 hover:text-primary transition-colors">Accueil</a>
+                    <a href="#about" class="text-gray-300 hover:text-primary transition-colors">À propos</a>
+                    <a href="#skills" class="text-gray-300 hover:text-primary transition-colors">Compétences</a>
+                    <a href="#projects" class="text-gray-300 hover:text-primary transition-colors">Projets</a>
+                    <a href="#experience" class="text-gray-300 hover:text-primary transition-colors">Expériences</a>
+                    <a href="#contact" class="text-gray-300 hover:text-primary transition-colors">Contact</a>
+                </div>
+                
+                <div>
+                    <p class="text-gray-400 text-sm">Design par Anthony-hub7 © 2025</p>
+                </div>
+            </div>
+            
+            <div class="mt-8 pt-8 border-t border-gray-800 text-center">
+                <p class="text-gray-400 text-sm">
+                    Fait avec <span class="text-pink-500">❤</span> à Antananarivo, Madagascar
+                </p>
+            </div>
+        </div>
+        
+        <a href="#home" class="fixed bottom-6 right-6 w-12 h-12 flex items-center justify-center bg-primary rounded-full shadow-lg hover:bg-opacity-80 transition-all">
+            <i class="ri-arrow-up-line text-white text-xl"></i>
+        </a>
+    </footer>
+    
+    <script id="navigation-script">
+        document.addEventListener('DOMContentLoaded', function() {
+            const menuToggle = document.getElementById('menu-toggle');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const navLinks = document.querySelectorAll('.nav-link');
+            
+            menuToggle.addEventListener('click', function() {
+                mobileMenu.classList.toggle('hidden');
+                const bars = menuToggle.querySelectorAll('div');
+                bars[0].classList.toggle('transform');
+                bars[0].classList.toggle('rotate-45');
+                bars[0].classList.toggle('translate-y-2');
+                bars[1].classList.toggle('opacity-0');
+                bars[2].classList.toggle('transform');
+                bars[2].classList.toggle('-rotate-45');
+                bars[2].classList.toggle('-translate-y-2');
+            });
+            
+            navLinks.forEach(link => {
+                link.addEventListener('click', function() {
+                    navLinks.forEach(l => l.classList.remove('active'));
+                    this.classList.add('active');
+                    
+                    if (!mobileMenu.classList.contains('hidden')) {
+                        mobileMenu.classList.add('hidden');
+                        const bars = menuToggle.querySelectorAll('div');
+                        bars[0].classList.remove('transform', 'rotate-45', 'translate-y-2');
+                        bars[1].classList.remove('opacity-0');
+                        bars[2].classList.remove('transform', '-rotate-45', '-translate-y-2');
+                    }
+                });
+            });
+            
+            window.addEventListener('scroll', function() {
+                const sections = document.querySelectorAll('section');
+                let current = '';
+                
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop;
+                    const sectionHeight = section.clientHeight;
+                    if (pageYOffset >= (sectionTop - sectionHeight / 3)) {
+                        current = section.getAttribute('id');
+                    }
+                });
+                
+                navLinks.forEach(link => {
+                    link.classList.remove('active');
+                    if (link.getAttribute('href') === `#${current}`) {
+                        link.classList.add('active');
+                    }
+                });
+            });
+        });
+    </script>
+    
+    <script id="typing-animation-script">
+        document.addEventListener('DOMContentLoaded', function() {
+            const texts = [
+                "Développeur Web & Technicien Réseau",
+                "Passionné par le code et les réseaux",
+                "Créatif et toujours curieux"
+            ];
+            
+            let textIndex = 0;
+            let charIndex = 0;
+            let isDeleting = false;
+            const typingSpeed = 100;
+            const deletingSpeed = 50;
+            const pauseTime = 1000;
+            
+            const typingElement = document.getElementById('typing-text');
+            
+            function type() {
+                const currentText = texts[textIndex];
+                
+                if (isDeleting) {
+                    typingElement.textContent = currentText.substring(0, charIndex - 1);
+                    charIndex--;
+                } else {
+                    typingElement.textContent = currentText.substring(0, charIndex + 1);
+                    charIndex++;
+                }
+                
+                if (!isDeleting && charIndex === currentText.length) {
+                    isDeleting = true;
+                    setTimeout(type, pauseTime);
+                } else if (isDeleting && charIndex === 0) {
+                    isDeleting = false;
+                    textIndex = (textIndex + 1) % texts.length;
+                    setTimeout(type, 500);
+                } else {
+                    setTimeout(type, isDeleting ? deletingSpeed : typingSpeed);
+                }
+            }
+            
+            setTimeout(type, 1000);
+        });
+    </script>
+    
+    <script id="particles-script">
+        document.addEventListener('DOMContentLoaded', function() {
+            const particles = document.querySelector('.particles');
+            
+            for (let i = 0; i < 20; i++) {
+                const size = Math.random() * 10 + 5;
+                const particle = document.createElement('div');
+                particle.classList.add('particle');
+                particle.style.width = `${size}px`;
+                particle.style.height = `${size}px`;
+                particle.style.top = `${Math.random() * 100}%`;
+                particle.style.left = `${Math.random() * 100}%`;
+                particle.style.animationDelay = `${Math.random() * 15}s`;
+                particle.style.opacity = `${Math.random() * 0.5 + 0.1}`;
+                
+                particles.appendChild(particle);
+            }
+        });
+    </script>
+    
+    <script id="sakura-script">
+        document.addEventListener('DOMContentLoaded', function() {
+            const body = document.body;
+            
+            function createSakura() {
+                const sakura = document.createElement('div');
+                sakura.classList.add('sakura');
+                sakura.style.left = Math.random() * window.innerWidth + 'px';
+                sakura.style.animationDuration = Math.random() * 10 + 5 + 's';
+                body.appendChild(sakura);
+                
+                setTimeout(() => {
+                    sakura.remove();
+                }, 15000);
+            }
+            
+            setInterval(createSakura, 300);
+            
+            for (let i = 0; i < 10; i++) {
+                setTimeout(createSakura, 100 * i);
+            }
+        });
+    </script>
+    
+    <script id="contact-form-script">
+        document.addEventListener('DOMContentLoaded', function() {
+            const contactForm = document.getElementById('contact-form');
+            
+            contactForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                const name = document.getElementById('name').value;
+                const email = document.getElementById('email').value;
+                const subject = document.getElementById('subject').value;
+                const message = document.getElementById('message').value;
+                
+                // Ici vous pourriez ajouter du code pour envoyer le formulaire
+                // via AJAX ou une autre méthode
+                
+                // Simulation d'envoi réussi
+                alert(`Merci ${name} ! Votre message a été envoyé avec succès. Je vous répondrai dès que possible.`);
+                contactForm.reset();
+            });
+        });
+    </script>
+</body>
+</html>
