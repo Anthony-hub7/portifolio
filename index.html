@@ -288,6 +288,54 @@
             75% { transform: translateY(20px) translateX(10px); }
             100% { transform: translateY(0) translateX(0); }
         }
+        
+        nav {
+            transition: transform 0.3s ease;
+        }
+
+        .mobile-nav-link {
+            position: relative;
+            display: block;
+            padding: 0.75rem 0;
+            font-size: 1.125rem;
+            transition: all 0.3s ease;
+        }
+
+        .mobile-nav-link::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(90deg, #8B5CF6, #3B82F6);
+            transition: width 0.3s ease;
+        }
+
+        .mobile-nav-link:hover::after,
+        .mobile-nav-link.active::after {
+            width: 2rem;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding-left: 1rem;
+                padding-right: 1rem;
+            }
+            
+            .section-padding {
+                padding-top: 4rem;
+                padding-bottom: 4rem;
+            }
+            
+            .text-4xl {
+                font-size: 2rem;
+            }
+            
+            .grid {
+                gap: 1.5rem;
+            }
+        }
     </style>
 </head>
 <body>
@@ -304,23 +352,24 @@
                 <a href="#contact" class="nav-link text-white hover:text-primary transition-colors">Contact</a>
             </div>
             
+            <!-- Remplacer la section du menu mobile existante -->
             <div class="md:hidden flex items-center">
-                <button id="menu-toggle" class="text-white focus:outline-none">
-                    <div class="w-6 h-0.5 bg-white mb-1.5 transition-all"></div>
-                    <div class="w-6 h-0.5 bg-white mb-1.5 transition-all"></div>
-                    <div class="w-6 h-0.5 bg-white transition-all"></div>
+                <button id="menu-toggle" class="text-white focus:outline-none relative w-8 h-8">
+                    <div class="absolute w-6 h-0.5 bg-white transform transition-all duration-300 top-3 left-1"></div>
+                    <div class="absolute w-6 h-0.5 bg-white transform transition-all duration-300 top-4 left-1"></div>
+                    <div class="absolute w-6 h-0.5 bg-white transform transition-all duration-300 top-5 left-1"></div>
                 </button>
             </div>
         </div>
         
-        <div id="mobile-menu" class="md:hidden hidden glassmorphism absolute w-full">
-            <div class="container mx-auto px-6 py-4 flex flex-col space-y-4">
-                <a href="#home" class="nav-link text-white hover:text-primary transition-colors">Accueil</a>
-                <a href="#about" class="nav-link text-white hover:text-primary transition-colors">À propos</a>
-                <a href="#skills" class="nav-link text-white hover:text-primary transition-colors">Compétences</a>
-                <a href="#projects" class="nav-link text-white hover:text-primary transition-colors">Projets</a>
-                <a href="#experience" class="nav-link text-white hover:text-primary transition-colors">Expériences</a>
-                <a href="#contact" class="nav-link text-white hover:text-primary transition-colors">Contact</a>
+        <div id="mobile-menu" class="md:hidden fixed top-[60px] left-0 w-full transform -translate-x-full transition-transform duration-300 ease-in-out">
+            <div class="glassmorphism border-t border-primary border-opacity-20 px-6 py-6 space-y-6">
+                <a href="#home" class="nav-link block text-lg text-white hover:text-primary transition-colors">Accueil</a>
+                <a href="#about" class="nav-link block text-lg text-white hover:text-primary transition-colors">À propos</a>
+                <a href="#skills" class="nav-link block text-lg text-white hover:text-primary transition-colors">Compétences</a>
+                <a href="#projects" class="nav-link block text-lg text-white hover:text-primary transition-colors">Projets</a>
+                <a href="#experience" class="nav-link block text-lg text-white hover:text-primary transition-colors">Expériences</a>
+                <a href="#contact" class="nav-link block text-lg text-white hover:text-primary transition-colors">Contact</a>
             </div>
         </div>
     </nav>
@@ -1146,60 +1195,82 @@
         </a>
     </footer>
     
+    <!-- Remplacer le script de navigation existant -->
     <script id="navigation-script">
-        document.addEventListener('DOMContentLoaded', function() {
-            const menuToggle = document.getElementById('menu-toggle');
-            const mobileMenu = document.getElementById('mobile-menu');
-            const navLinks = document.querySelectorAll('.nav-link');
+document.addEventListener('DOMContentLoaded', function() {
+    const menuToggle = document.getElementById('menu-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const navLinks = document.querySelectorAll('.nav-link');
+    const bars = menuToggle.querySelectorAll('div');
+    
+    let isMenuOpen = false;
+
+    function toggleMenu() {
+        isMenuOpen = !isMenuOpen;
+        
+        // Animation du menu burger
+        bars[0].style.transform = isMenuOpen ? 'rotate(45deg) translate(2px, 5px)' : '';
+        bars[1].style.opacity = isMenuOpen ? '0' : '1';
+        bars[2].style.transform = isMenuOpen ? 'rotate(-45deg) translate(2px, -5px)' : '';
+        
+        // Animation du menu mobile
+        mobileMenu.style.transform = isMenuOpen ? 'translateX(0)' : 'translateX(-100%)';
+        
+        // Désactiver le scroll quand le menu est ouvert
+        document.body.style.overflow = isMenuOpen ? 'hidden' : '';
+    }
+    
+    menuToggle.addEventListener('click', toggleMenu);
+    
+    // Fermer le menu mobile lors du clic sur un lien
+    navLinks.forEach(link => {
+        link.addEventListener('click', function() {
+            if (isMenuOpen) {
+                toggleMenu();
+            }
             
-            menuToggle.addEventListener('click', function() {
-                mobileMenu.classList.toggle('hidden');
-                const bars = menuToggle.querySelectorAll('div');
-                bars[0].classList.toggle('transform');
-                bars[0].classList.toggle('rotate-45');
-                bars[0].classList.toggle('translate-y-2');
-                bars[1].classList.toggle('opacity-0');
-                bars[2].classList.toggle('transform');
-                bars[2].classList.toggle('-rotate-45');
-                bars[2].classList.toggle('-translate-y-2');
-            });
-            
-            navLinks.forEach(link => {
-                link.addEventListener('click', function() {
-                    navLinks.forEach(l => l.classList.remove('active'));
-                    this.classList.add('active');
-                    
-                    if (!mobileMenu.classList.contains('hidden')) {
-                        mobileMenu.classList.add('hidden');
-                        const bars = menuToggle.querySelectorAll('div');
-                        bars[0].classList.remove('transform', 'rotate-45', 'translate-y-2');
-                        bars[1].classList.remove('opacity-0');
-                        bars[2].classList.remove('transform', '-rotate-45', '-translate-y-2');
-                    }
-                });
-            });
-            
-            window.addEventListener('scroll', function() {
-                const sections = document.querySelectorAll('section');
-                let current = '';
-                
-                sections.forEach(section => {
-                    const sectionTop = section.offsetTop;
-                    const sectionHeight = section.clientHeight;
-                    if (pageYOffset >= (sectionTop - sectionHeight / 3)) {
-                        current = section.getAttribute('id');
-                    }
-                });
-                
-                navLinks.forEach(link => {
-                    link.classList.remove('active');
-                    if (link.getAttribute('href') === `#${current}`) {
-                        link.classList.add('active');
-                    }
-                });
-            });
+            // Gestion de l'état actif des liens
+            navLinks.forEach(l => l.classList.remove('active'));
+            this.classList.add('active');
         });
-    </script>
+    });
+    
+    // Gestion du scroll et des sections actives
+    let lastScrollTop = 0;
+    const nav = document.querySelector('nav');
+    
+    window.addEventListener('scroll', function() {
+        const st = window.pageYOffset;
+        
+        // Navigation hide/show sur scroll
+        if (st > lastScrollTop && st > 60) {
+            nav.style.transform = 'translateY(-100%)';
+        } else {
+            nav.style.transform = 'translateY(0)';
+        }
+        lastScrollTop = st;
+        
+        // Sections actives
+        const sections = document.querySelectorAll('section');
+        let current = '';
+        
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop - 100;
+            const sectionHeight = section.clientHeight;
+            if (pageYOffset >= sectionTop && pageYOffset < sectionTop + sectionHeight) {
+                current = section.getAttribute('id');
+            }
+        });
+        
+        navLinks.forEach(link => {
+            link.classList.remove('active');
+            if (link.getAttribute('href') === `#${current}`) {
+                link.classList.add('active');
+            }
+        });
+    });
+});
+</script>
     
     <script id="typing-animation-script">
         document.addEventListener('DOMContentLoaded', function() {
@@ -1245,70 +1316,54 @@
         });
     </script>
     
-    <script id="particles-script">
-        document.addEventListener('DOMContentLoaded', function() {
-            const particles = document.querySelector('.particles');
-            
-            for (let i = 0; i < 20; i++) {
-                const size = Math.random() * 10 + 5;
-                const particle = document.createElement('div');
-                particle.classList.add('particle');
-                particle.style.width = `${size}px`;
-                particle.style.height = `${size}px`;
-                particle.style.top = `${Math.random() * 100}%`;
-                particle.style.left = `${Math.random() * 100}%`;
-                particle.style.animationDelay = `${Math.random() * 15}s`;
-                particle.style.opacity = `${Math.random() * 0.5 + 0.1}`;
-                
-                particles.appendChild(particle);
-            }
-        });
-    </script>
     
-    <script id="sakura-script">
-        document.addEventListener('DOMContentLoaded', function() {
-            const body = document.body;
-            
-            function createSakura() {
-                const sakura = document.createElement('div');
-                sakura.classList.add('sakura');
-                sakura.style.left = Math.random() * window.innerWidth + 'px';
-                sakura.style.animationDuration = Math.random() * 10 + 5 + 's';
-                body.appendChild(sakura);
-                
-                setTimeout(() => {
-                    sakura.remove();
-                }, 15000);
-            }
-            
-            setInterval(createSakura, 300);
-            
-            for (let i = 0; i < 10; i++) {
-                setTimeout(createSakura, 100 * i);
-            }
-        });
-    </script>
+
+<script id="particles-script">
+document.addEventListener('DOMContentLoaded', function() {
+    const particles = document.querySelector('.particles');
     
-    <script id="contact-form-script">
-        document.addEventListener('DOMContentLoaded', function() {
-            const contactForm = document.getElementById('contact-form');
-            
-            contactForm.addEventListener('submit', function(e) {
-                e.preventDefault();
-                
-                const name = document.getElementById('name').value;
-                const email = document.getElementById('email').value;
-                const subject = document.getElementById('subject').value;
-                const message = document.getElementById('message').value;
-                
-                // Ici vous pourriez ajouter du code pour envoyer le formulaire
-                // via AJAX ou une autre méthode
-                
-                // Simulation d'envoi réussi
-                alert(`Merci ${name} ! Votre message a été envoyé avec succès. Je vous répondrai dès que possible.`);
-                contactForm.reset();
-            });
-        });
-    </script>
+    // Création des particules
+    for (let i = 0; i < 20; i++) {
+        const particle = document.createElement('div');
+        particle.classList.add('particle');
+        
+        // Taille aléatoire
+        const size = Math.random() * 10 + 5;
+        particle.style.width = `${size}px`;
+        particle.style.height = `${size}px`;
+        
+        // Position aléatoire
+        particle.style.top = `${Math.random() * 100}%`;
+        particle.style.left = `${Math.random() * 100}%`;
+        
+        // Délai d'animation aléatoire
+        particle.style.animationDelay = `${Math.random() * 15}s`;
+        
+        particles.appendChild(particle);
+    }
+});
+</script>
+
+<script id="contact-form-script">
+document.addEventListener('DOMContentLoaded', function() {
+    const contactForm = document.getElementById('contact-form');
+    
+    contactForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        const name = document.getElementById('name').value;
+        const email = document.getElementById('email').value;
+        const subject = document.getElementById('subject').value;
+        const message = document.getElementById('message').value;
+        
+        // Ici vous pourriez ajouter du code pour envoyer le formulaire
+        // via AJAX ou une autre méthode
+        
+        // Simulation d'envoi réussi
+        alert(`Merci ${name} ! Votre message a été envoyé avec succès. Je vous répondrai dès que possible.`);
+        contactForm.reset();
+    });
+});
+</script>
 </body>
 </html>
